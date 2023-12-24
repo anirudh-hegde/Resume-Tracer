@@ -5,5 +5,6 @@ After uploading, you get search bar to search for the keyword/s present in resum
 keywords/s are present ot not present it displays it to you.
 
 ## Demo
-[Screencast from 2023-12-24 17-16-35.webm](https://github.com/anirudh-hegde/resume-tracer/assets/105560839/590ff2f0-6907-400e-b64e-4f089e8b15d4)
+[Screencast from 2023-12-24 17-19-50.webm](https://github.com/anirudh-hegde/resume-tracer/assets/105560839/702413da-5832-4300-8194-0a1426b629b2)
+
 
