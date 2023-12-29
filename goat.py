@@ -40,7 +40,7 @@ def main():
                     st.error(f"{word.capitalize()} isn't present in the resume")
 
     else:
-        st.warning("Please upload the file")
+        st.warning("Please upload the file format only in pdf/docx")
 
 
 if __name__ == "__main__":
