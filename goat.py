@@ -32,10 +32,15 @@ def main():
         # for input/s
         if search_text:
             st.header("Searching results..")
-            for word in search_text.split(" "):
-                if word.lower() in page_content.lower():
-                    st.success(f"{word.capitalize()} present in the resume")
 
+
+            for word in search_text.split(","):
+                punctuations = [".", ".", "-", "*", "/"]
+                for p in punctuations:
+                    word=word.lower().replace(p,"")
+                    page_content=page_content.lower().replace(p,"")
+                if word in page_content:
+                    st.success(f"{word.capitalize()} present in the resume")
                 else:
                     st.error(f"{word.capitalize()} isn't present in the resume")
 
