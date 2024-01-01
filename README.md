@@ -8,3 +8,28 @@ Then if the keywords/s are present or not present it displays it to you.
 [Screencast from 2023-12-24 17-19-50.webm](https://github.com/anirudh-hegde/resume-tracer/assets/105560839/702413da-5832-4300-8194-0a1426b629b2)
 
 
+## Tech Stacks
+- Python
+- Streamlit
+- PyPDF2
+
+## Prequisites
+- Install Python
+- Install Pycharm CE
+
+## Build Intructions 
+- Clone the repository
+```sh
+git clone https://github.com/anirudh-hegde/resume-tracer.git
+```
+- Move to repository directory
+```sh
+cd resume-tracer
+```
+- Run the application
+```sh
+streamlit run goat.py
+```
+
+## Conclusion
+Congratulations! You have run the application.
