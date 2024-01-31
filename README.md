@@ -26,9 +26,13 @@ git clone https://github.com/anirudh-hegde/resume-tracer.git
 ```sh
 cd resume-tracer
 ```
-- Run the application
+- Build Docker Container 
 ```sh
-streamlit run goat.py
+docker build -t resutracer  .
+```
+- Use the container and activate the API 
+```sh
+docker run --user=root resutracer
 ```
 
 ## Conclusion
