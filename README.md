@@ -36,4 +36,4 @@ docker run --user=root resutracer
 ```
 
 ## Conclusion
-Congratulations! You have run the application 🚀️.
+Congratulations! You have successfully run the application 🚀️.
