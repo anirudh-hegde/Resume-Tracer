@@ -1,4 +1,4 @@
-# Resume Tracer
+# 🧾️Resume Tracer👁️
 
 Resume tracer is an Streamlit App which helps the user to upload the resume in PDF/DOC format. 
 After uploading, you get search bar to search for the keyword/s present in resume or not. 
