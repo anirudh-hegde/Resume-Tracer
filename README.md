@@ -2,7 +2,7 @@
   <img src="https://github.com/anirudh-hegde/resume-tracer/assets/105560839/12bd32a7-9d2b-48c8-b9a5-cd80a8ec9b23"width="700px" height="400px">
 </p>
 <p style="text-align:center;" align="center">
-<a href="https://github.com/anirudh-hegde/webhealth-inspect/blob/main/LICENSE" alt="LICENSE">
+<a href="https://github.com/anirudh-hegde/Resume-Tracer/blob/main/LICENSE" alt="LICENSE">
     <img src="https://img.shields.io/github/license/anirudh-hegde/resume-tracer?color=brightgreen" />
 </a>
 </p>
