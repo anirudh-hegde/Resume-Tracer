@@ -12,6 +12,9 @@
 Resume tracer is an Streamlit App which helps the user to upload the resume in PDF/DOC format. 
 After uploading, you get search bar to search for the keyword/s present in resume or not. 
 Then if the keywords/s are present or not present it displays it to you. I have dockerised the application and deployed on AWS using EC2 instamce and Elastic IP address.
+I have containerised the application. 
+
+Also the application will be running,when Terraform configuration sets up a local-exec provisioner within a null_resource, allowing you to execute a local shell command when applying or updating your Terraform configuration.
 
 ## Demo
 [Screencast from 2023-12-24 17-19-50.webm](https://github.com/anirudh-hegde/resume-tracer/assets/105560839/702413da-5832-4300-8194-0a1426b629b2)
