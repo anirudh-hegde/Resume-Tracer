@@ -1,5 +1,6 @@
 import streamlit as st
-import PyPDF2
+# import PyPDF2
+from pypdf import PdfReader
 
 # craete a empty string
 page_content = ""
@@ -8,7 +9,7 @@ page_content = ""
 # function to extract the page contents of resume
 def display_context_file(upload_file):
     global page_content
-    pdfReader = PyPDF2.PdfReader(upload_file)
+    pdfReader = PdfReader(upload_file)
 
     for i in range(len(pdfReader.pages)):
         pageObj = pdfReader.pages[i]
@@ -33,12 +34,11 @@ def main():
         if search_text:
             st.header("Searching results..")
 
-
             for word in search_text.split(","):
                 punctuations = [".", ".", "-", "*", "/"]
                 for p in punctuations:
-                    word=word.lower().replace(p,"")
-                    page_content=page_content.lower().replace(p,"")
+                    word = word.lower().replace(p, "")
+                    page_content = page_content.lower().replace(p, "")
                 if word in page_content:
                     st.success(f"{word.capitalize()} present in the resume")
                 else:
