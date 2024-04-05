@@ -1,7 +1,7 @@
 import streamlit as st
 # import PyPDF2
 from pypdf import PdfReader
-
+import cProfile
 # craete a empty string
 page_content = ""
 
@@ -49,4 +49,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    cProfile.run('main()')
