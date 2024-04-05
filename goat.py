@@ -1,21 +1,21 @@
 import streamlit as st
-# import PyPDF2
+
 from pypdf import PdfReader
 import cProfile
 # craete a empty string
-page_content = ""
+Page_Content = ""
 
 
 # function to extract the page contents of resume
 def display_context_file(upload_file):
     global page_content
-    pdfReader = PdfReader(upload_file)
+    Pdfreader = PdfReader(upload_file)
 
     for i in range(len(pdfReader.pages)):
-        pageObj = pdfReader.pages[i]
-        page_content = str(pageObj.extract_text())
+        PageObj = pdfReader.pages[i]
+        Page_Content = str(PageObj.extract_text())
 
-    return page_content
+    return Page_Content
 
 
 def main():
@@ -27,19 +27,19 @@ def main():
         st.success("Resume uploaded successfully")
 
         # pass the uplaod_files
-        page_content = display_context_file(upload_files)
-        search_text = st.text_input("Enter the text which you want to search: ")
+        Page_Content = display_context_file(upload_files)
+        Search_Text = st.text_input("Enter the text which you want to search: ")
 
         # for input/s
-        if search_text:
+        if Search_Text:
             st.header("Searching results..")
 
-            for word in search_text.split(","):
+            for word in Search_Text.split(","):
                 punctuations = [".", ".", "-", "*", "/"]
                 for p in punctuations:
                     word = word.lower().replace(p, "")
-                    page_content = page_content.lower().replace(p, "")
-                if word in page_content:
+                    Page_Content = Page_Content.lower().replace(p, "")
+                if word in Page_Content:
                     st.success(f"{word.capitalize()} present in the resume")
                 else:
                     st.error(f"{word.capitalize()} isn't present in the resume")
