@@ -13,7 +13,7 @@ def display_context_file(upload_file):
     global page_content
     pdf_reader = PdfReader(upload_file)
 
-    for i in range(len(pdfReader.pages)):
+    for i in range(len(pdf_reader.pages)):
         page_obj = pdf_reader.pages[i]
         page_content = str(page_obj.extract_text())
 
