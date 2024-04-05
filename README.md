@@ -21,9 +21,9 @@ Also the application can be run using terraform, when Terraform configuration se
 
 
 ## Tech Stacks
-- Python
-- Streamlit
-- PyPDF2
+- python
+- streamlit
+- pypdf
 
 ## Prequisites
 - Install Python
