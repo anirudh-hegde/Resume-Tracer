@@ -1,6 +1,4 @@
 from streamlit.testing.v1 import AppTest
-from goat import main
-# from io import BytesIO
 
 def test_app_error():
     at=AppTest.from_file("goat.py").run()

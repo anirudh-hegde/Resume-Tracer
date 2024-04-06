@@ -1,5 +1,3 @@
-'''Python goat file implements the streamlit app called as Resume-Tracer
-   which indentifies keywords required'''
 import cProfile
 from pypdf import PdfReader
 import streamlit as st
@@ -10,10 +8,10 @@ PAGE_CONTENT = ""
 
 # function to extract the page contents of resume
 def display_context_file(upload_file):
-    global PAGE_CONTENT
+    """Extract the page contents of a resume PDF."""
     pdf_reader = PdfReader(upload_file)
 
-    for i in enumerate(pdf_reader.pages):
+    for i,j in enumerate(pdf_reader.pages):
         page_obj = pdf_reader.pages[i]
         PAGE_CONTENT = str(page_obj.extract_text())
 
