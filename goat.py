@@ -1,9 +1,12 @@
+"""Python goat file implements the streamlit app called
+   as Resume-Tracer which indentifies keywords required
+"""
 import cProfile
 from pypdf import PdfReader
 import streamlit as st
 
 # craete a empty string
-PAGE_CONTENT = ""
+page_content = ""
 
 
 # function to extract the page contents of resume
@@ -11,11 +14,11 @@ def display_context_file(upload_file):
     """Extract the page contents of a resume PDF."""
     pdf_reader = PdfReader(upload_file)
 
-    for i,j in enumerate(pdf_reader.pages):
+    for i, _ in enumerate(pdf_reader.pages):
         page_obj = pdf_reader.pages[i]
-        PAGE_CONTENT = str(page_obj.extract_text())
+        page_content = str(page_obj.extract_text())
 
-    return PAGE_CONTENT
+    return page_content
 
 
 def main():
@@ -27,7 +30,7 @@ def main():
         st.success("Resume uploaded successfully")
 
         # pass the uplaod_files
-        PAGE_CONTENT = display_context_file(upload_files)
+        page_content = display_context_file(upload_files)
         search_text = st.text_input("Enter the text which you want to search: ")
 
         # for input/s
@@ -38,8 +41,8 @@ def main():
                 punctuations = [".", ".", "-", "*", "/"]
                 for p in punctuations:
                     word = word.lower().replace(p, "")
-                    PAGE_CONTENT = PAGE_CONTENT.lower().replace(p, "")
-                if word in PAGE_CONTENT:
+                    page_content = page_content.lower().replace(p, "")
+                if word in page_content:
                     st.success(f"{word.capitalize()} present in the resume")
                 else:
                     st.error(f"{word.capitalize()} isn't present in the resume")
@@ -50,3 +53,5 @@ def main():
 
 if __name__ == "__main__":
     cProfile.run('main()')
+
+# end of code
