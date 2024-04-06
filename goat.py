@@ -5,13 +5,13 @@ import cProfile
 from pypdf import PdfReader
 import streamlit as st
 
-# craete a empty string
+# create a empty string
 page_content = ""
 
 
 # function to extract the page contents of resume
 def display_context_file(upload_file):
-    """Extract the page contents of a resume PDF."""
+    """Extracts the page contents of a resume PDF."""
     pdf_reader = PdfReader(upload_file)
 
     for i, _ in enumerate(pdf_reader.pages):
@@ -22,6 +22,8 @@ def display_context_file(upload_file):
 
 
 def main():
+    """Contributes to the process of uploading the resume
+    in pdf/doc/docx format and searching the keywords"""
     st.title("Resume Search App")
     upload_files = st.sidebar.file_uploader("upload your resume", type=['docx', 'pdf'])
 
