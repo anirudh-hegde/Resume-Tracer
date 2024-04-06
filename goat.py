@@ -5,9 +5,6 @@ import cProfile
 from pypdf import PdfReader
 import streamlit as st
 
-# create a empty string
-page_content = ""
-
 
 # function to extract the page contents of resume
 def display_context_file(upload_file):
