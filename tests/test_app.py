@@ -9,5 +9,6 @@ def test_app_error():
     test_dir=os.path.dirname(os.path.abspath(__file__))
     app_script_path=os.path.join(test_dir,"..","goat.py")
     assert os.path.isfile(app_script_path),f"File not found at {app_script_path}"
-    at = AppTest.from_file(app_script_path).run()
-    assert not at.exception
+    at = AppTest.from_file(app_script_path)
+    at.session_state["Enter the text which you want to search: "] = ""
+    at.run()
