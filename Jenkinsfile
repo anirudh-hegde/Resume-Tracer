@@ -3,7 +3,7 @@ pipeline {
     stages {
       stage("execute"){
         steps {
-          sh 'python -m streamlit run goat.py'
+          sh 'python3 -m streamlit run goat.py'
         }
       }
     }
