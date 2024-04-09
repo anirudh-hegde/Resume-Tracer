@@ -11,5 +11,9 @@ pipeline {
           sh 'python3 -m streamlit run goat.py'
         }
       }
+      post {
+        success {
+          echo "Pipeline completed successfully"
+        }
     }
 }
