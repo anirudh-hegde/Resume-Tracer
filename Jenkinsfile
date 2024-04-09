@@ -16,5 +16,9 @@ pipeline {
         success {
           echo "Pipeline completed successfully"
         }
+        error {
+            echo "Pipeline failed"
+            currentBuild.result = 'Failure'
+        }
     }
 }
