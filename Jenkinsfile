@@ -37,8 +37,10 @@ pipeline {
     
     post {
         success {
-            echo "Pipeline completed successfully"
-            currentBuild.result = 'ABORTED'
+            steps {
+                echo "Pipeline completed successfully"
+                currentBuild.result = 'ABORTED'
+            }
         }
     }
 }
