@@ -33,14 +33,6 @@ pipeline {
                 sh 'python3 -m streamlit run goat.py'
             }
         }
-        stage("finalize") {
-            steps {
-                script {
-                    echo "Sleeping for 5 seconds"
-                    sleep 5
-                }
-            }
-        }
     }
     
     post {
