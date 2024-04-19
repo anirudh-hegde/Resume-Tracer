@@ -38,9 +38,9 @@ def main():
 
             for word in search_text.split(","):
                 punctuations = [".", ".", "-", "*", "/"]
-                for p in punctuations:
-                    word = word.lower().replace(p, "")
-                    page_content = page_content.lower().replace(p, "")
+                for p_value in punctuations:
+                    word = word.lower().replace(p_value, "")
+                    page_content = page_content.lower().replace(p_value, "")
                 if word in page_content:
                     st.success(f"{word.capitalize()} present in the resume")
                 else:
