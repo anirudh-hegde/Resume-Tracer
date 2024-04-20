@@ -1,29 +1,33 @@
 pipeline {
-    agent any 
-    stages {
-      stage("build") {
-        steps {
-                checkout([$class: 'GitSCM', 
-                          branches: [[name: '*/main']], 
-                          userRemoteConfigs: [[url: 'https://github.com/anirudh-hegde/Resume-Tracer.git']]])
-                script {
-                    sh 'pip install -r requirements.txt'
-                    dir('Resume-Tracer') {
-                    }
-                }
-            }
-      }
-      stage("test"){
-        steps {
-          sh 'python3 -m pytest -v'
+  agent any
+  stages {
+    stage('build') {
+      steps {
+        checkout([$class: 'GitSCM', 
+                                  branches: [[name: '*/main']], 
+                                  userRemoteConfigs: [[url: 'https://github.com/anirudh-hegde/Resume-Tracer.git']]])
+        script {
+          sh 'pip install -r requirements.txt'
+          dir('Resume-Tracer') {
+          }
         }
-      }
-      stage("deploy") {
-        steps {
-            sh 'python3 -m streamlit run goat.py &'
-            sleep(time: 20, unit: 'SECONDS')
-            sh 'pkill -f "python3 -m streamlit run goat.py"'
-        }
+
       }
     }
+
+    stage('test') {
+      steps {
+        sh 'python3 -m pytest -v'
+      }
+    }
+
+    stage('deploy') {
+      steps {
+        sh 'python3 -m streamlit run goat.py &'
+        sleep(time: 20, unit: 'SECONDS')
+        sh 'pkill -f "python3 -m streamlit run goat.py"'
+      }
+    }
+
+  }
 }
