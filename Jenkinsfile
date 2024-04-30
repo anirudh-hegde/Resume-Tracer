@@ -22,7 +22,7 @@ pipeline {
     stage('deploy') {
       steps {
         sh 'python3 -m streamlit run goat.py &'
-        sleep(time: 20, unit: 'SECONDS')
+        sleep(time: 25, unit: 'SECONDS')
         sh 'pkill -f "python3 -m streamlit run goat.py"'
       }
     }
