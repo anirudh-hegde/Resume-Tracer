@@ -8,8 +8,6 @@ pipeline {
                                   userRemoteConfigs: [[url: 'https://github.com/anirudh-hegde/Resume-Tracer.git']]])
         script {
           sh 'pip install -r requirements.txt'
-          dir('Resume-Tracer') {
-          }
         }
 
       }
